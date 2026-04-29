@@ -102,15 +102,13 @@ export default async function HomePage() {
       <section className="hero-stage">
         <div className="hero-grid">
           <div className="intro-panel">
-            <span className="section-kicker">Portfolio / Cloud Tech Computing</span>
-            <p className="mini-note">Based in Indonesia. Building products and dependable systems.</p>
+            <span className="section-kicker">My Portfolio</span>
+            <p className="mini-note">Based in Indonesia.</p>
             <h1 className="typing-title">
               <TypingName />
             </h1>
             <p className="intro-text">
-              Saya adalah fresh graduate Informatika yang nyaman bekerja di tim Agile,
-              terbiasa mengatur alur kerja dengan pendekatan Kanban, dan suka membangun
-              sistem yang bukan hanya jalan, tapi juga enak dipelihara dalam jangka panjang.
+              Computer Science graduate with interests in infrastructure, cloud technologies, and intelligent systems. Passionate about building reliable solutions through digitalization and automation, systems thinking, and practical engineering.
             </p>
 
             <div className="cta-row">
@@ -137,7 +135,7 @@ export default async function HomePage() {
               </div>
               <div>
                 <span>Stack focus</span>
-                <strong>Cloud / DevOps</strong>
+                <strong>Cloud Tech</strong>
               </div>
             </div>
           </div>
@@ -181,22 +179,17 @@ export default async function HomePage() {
               <span className="section-kicker muted-dark">About Me</span>
               <h2>Who is Dawwi?</h2>
               <p>
-                Fresh Informatics graduate dengan pengalaman memimpin tim kecil, mengoordinasikan
-                task delivery, dan mengembangkan internal tools di lingkungan kerja yang
-                kolaboratif. Saya menikmati kombinasi antara software engineering, deployment,
-                dan system operations.
-              </p>
-              <p>
-                Secara teknis saya terbiasa dengan React dan Next.js, Linux environment,
-                containerized deployment, self-hosted infrastructure, serta monitoring stack
-                untuk menjaga sistem tetap stabil dan terukur.
+                A Digital Oriented technology professional with hands-on experience in infrastructure operations, cloud technologies, automation, and AI/ML solutions. Skilled in Linux systems, networking, troubleshooting, and deploying scalable services, while also exploring intelligent systems through machine learning and data-driven projects. Passionate about building reliable, efficient, and innovative technology solutions across infrastructure and modern computing environments.
               </p>
 
               <div className="about-chips">
                 <span>Agile workflow</span>
                 <span>Team leadership</span>
-                <span>Cloud & DevOps</span>
-                <span>Self-hosted systems</span>
+                <span>System Administrator</span>
+                <span>Cloud Tech</span>
+                <span>DevOps</span>
+                <span>AI engineer</span>
+                <span>Self-hosted env</span>
               </div>
             </div>
           </aside>
@@ -206,7 +199,7 @@ export default async function HomePage() {
       <section className="content-section" id="experience">
         <div className="section-heading">
           <span className="section-kicker">Experience</span>
-          <h2>Leadership, delivery, and practical systems thinking.</h2>
+          <h2>My Previous Working Experience</h2>
         </div>
 
         <div className="experience-grid">
@@ -234,7 +227,7 @@ export default async function HomePage() {
       <section className="content-section" id="projects">
         <div className="section-heading">
           <span className="section-kicker">Projects</span>
-          <h2>Selected public releases and private technical labs.</h2>
+          <h2>Public and Private Projects.</h2>
         </div>
 
         <div className="projects-layout">
@@ -273,7 +266,7 @@ export default async function HomePage() {
           <aside className="labs-panel">
             <div className="labs-shell">
               <span className="section-kicker muted">Private labs</span>
-              <h3>Internal experiments and infrastructure work.</h3>
+              <h3>Internal experiments Project.</h3>
               <div className="labs-list">
                 {sourceState.projects.status === "rejected" ? (
                   <article className="lab-card">
@@ -301,7 +294,7 @@ export default async function HomePage() {
 
       <footer className="site-footer">
         <div className="footer-copy">
-          <span className="section-kicker">Footer</span>
+          <span className="section-kicker">Contacts</span>
           <h2>Designed and built by Dawwi.</h2>
           <p>Bandung, Indonesia</p>
         </div>
