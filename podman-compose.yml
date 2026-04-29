@@ -10,6 +10,6 @@ services:
       NODE_ENV: production
       PORT: 3013
       HOSTNAME: 0.0.0.0
-      NEXT_PUBLIC_SITE_URL: ${NEXT_PUBLIC_SITE_URL:-http://localhost:3013}
-      NEXT_PUBLIC_STRAPI_URL: ${NEXT_PUBLIC_STRAPI_URL:-https://strapi.cihuy-familly.my.id}
+      NEXT_PUBLIC_SITE_URL: http://localhost:3013
+      NEXT_PUBLIC_STRAPI_URL: https://strapi.cihuy-familly.my.id
     restart: unless-stopped
