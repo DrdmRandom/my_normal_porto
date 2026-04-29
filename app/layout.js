@@ -2,6 +2,12 @@ import { Manrope, Space_Grotesk } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
 
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
+const plausibleDomain =
+  process.env.NEXT_PUBLIC_PLAUSIBLE_DOMAIN || "myporto.cihuy-familly.my.id";
+const plausibleHost =
+  process.env.NEXT_PUBLIC_PLAUSIBLE_HOST || "https://analytics.cihuyproject.my.id";
+
 const manrope = Manrope({
   subsets: ["latin"],
   variable: "--font-body"
@@ -13,7 +19,7 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000"),
+  metadataBase: new URL(siteUrl),
   title: "Dawwi Portfolio",
   description:
     "Minimal, modern, and elegant portfolio for Dawwi with real-time project and work experience data from Strapi.",
@@ -61,6 +67,12 @@ export default function RootLayout({ children }) {
             })();
           `}
         </Script>
+        <script
+          defer
+          data-domain={plausibleDomain}
+          data-api={`${plausibleHost}/api/event`}
+          src={`${plausibleHost}/js/script.js`}
+        />
       </head>
       <body className={`${manrope.variable} ${spaceGrotesk.variable}`}>{children}</body>
     </html>
