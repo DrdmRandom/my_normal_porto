@@ -79,7 +79,7 @@ function PrivateProjectCard({ project }) {
 }
 
 export default async function HomePage() {
-  const { experiences, projects } = await getPortfolioData();
+  const { experiences, projects, sourceState } = await getPortfolioData();
   const publicProjects = projects.filter(
     (project) => String(project.Statuss || "").toLowerCase() === "public"
   );
@@ -210,7 +210,15 @@ export default async function HomePage() {
         </div>
 
         <div className="experience-grid">
-          {experiences.length > 0 ? (
+          {sourceState.experiences.status === "rejected" ? (
+            <article className="experience-card empty-state">
+              <h3>Experience feed unavailable</h3>
+              <p>
+                Website ini gagal mengambil data experience dari Strapi. Cek koneksi server
+                deployment ke host Strapi.
+              </p>
+            </article>
+          ) : experiences.length > 0 ? (
             experiences.map((experience) => (
               <ExperienceCard key={experience.documentId || experience.id} experience={experience} />
             ))
@@ -231,7 +239,19 @@ export default async function HomePage() {
 
         <div className="projects-layout">
           <div className="showcase-list">
-            {publicProjects.length > 0 ? (
+            {sourceState.projects.status === "rejected" ? (
+              <article className="showcase-card empty-state">
+                <div className="showcase-number">!!</div>
+                <div className="showcase-content">
+                  <h3>Project feed unavailable</h3>
+                  <p>
+                    Strapi live punya data project, tapi instance website ini gagal mengambilnya.
+                    Biasanya ini karena deployment lama, env host salah, atau server tidak bisa
+                    reach Strapi.
+                  </p>
+                </div>
+              </article>
+            ) : publicProjects.length > 0 ? (
               publicProjects.map((project, index) => (
                 <PublicProjectCard
                   key={project.documentId || project.id}
@@ -255,7 +275,12 @@ export default async function HomePage() {
               <span className="section-kicker muted">Private labs</span>
               <h3>Internal experiments and infrastructure work.</h3>
               <div className="labs-list">
-                {privateProjects.length > 0 ? (
+                {sourceState.projects.status === "rejected" ? (
+                  <article className="lab-card">
+                    <h4>Project feed unavailable</h4>
+                    <p>Private entries juga tidak bisa dimuat karena fetch ke Strapi gagal.</p>
+                  </article>
+                ) : privateProjects.length > 0 ? (
                   privateProjects.map((project) => (
                     <PrivateProjectCard
                       key={project.documentId || project.id}
